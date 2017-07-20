@@ -1,10 +1,10 @@
+html, body {
+ min-height: 100%;
+}
+
 body {
- width: 400px;
- height: 56px;
- background-image: url('img/Background.png');
- background-color: #0A554E;
+ background: url('../img/Background.png') no-repeat center;
  background-size: cover;
- background-position: center center;
 }
 
 .search-style {
@@ -23,16 +23,13 @@ body {
     padding: 20px 50px;
     font-size: 1.1em;
     list-style: decimal;
-    color: white;
-    
-    
+    color: white;    
 }
 #tracks li {
     padding: 0 10px;
     margin: 10px 50px;
     width: 400px;
-    
-    
+
 }
 
 #player {
