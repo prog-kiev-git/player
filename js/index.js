@@ -82,7 +82,7 @@ searchForm.on('submit', (event) => {
                 let indexOfArtist = item.indexOf(']'),
                     indexOfId = item.lastIndexOf('(');
                     
-                var trackData = {
+                let trackData = {
                     artist: item.slice(1,indexOfArtist),
                     title: item.slice(indexOfArtist + 1, indexOfId),
                     id: item.slice(indexOfId + 1, -1)
