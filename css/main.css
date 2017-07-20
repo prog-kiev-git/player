@@ -9,7 +9,6 @@ body {
 
 .search-style {
     padding: 20px 50px;
-    display: inline-block;
     position: relative;
 }
 
@@ -20,7 +19,6 @@ body {
 }
 
 #tracks {
-    padding: 20px 50px;
     font-size: 1.1em;
     list-style: decimal;
     color: white;    
@@ -35,4 +33,26 @@ body {
 #player {
     padding: 20px 50px;
     position: relative;
+}
+#query {
+    width: calc(100% - 150px);
+    padding: 8px 12px;
+    font-size: 20px;
+}
+#search button {
+    width: 130px;
+    height: 45px;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+#search {
+    display: flex;
+    justify-content: space-between;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+.content > div {
+    flex-basis: 50%;
 }
