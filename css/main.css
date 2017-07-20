@@ -56,3 +56,9 @@ body {
 .content > div {
     flex-basis: 50%;
 }
+.in-player {
+    color: red;
+}
+.hidden {
+    display: none;
+}
