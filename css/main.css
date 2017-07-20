@@ -1,0 +1,41 @@
+body {
+ width: 400px;
+ height: 56px;
+ background-image: url('img/Background.png');
+ background-color: #0A554E;
+ background-size: cover;
+ background-position: center center;
+}
+
+.search-style {
+    padding: 20px 50px;
+    display: inline-block;
+    position: relative;
+}
+
+.tracks-style{
+    position: relative;
+    width: 400px;
+    display: block;
+}
+
+#tracks {
+    padding: 20px 50px;
+    font-size: 1.1em;
+    list-style: decimal;
+    color: white;
+    
+    
+}
+#tracks li {
+    padding: 0 10px;
+    margin: 10px 50px;
+    width: 400px;
+    
+    
+}
+
+#player {
+    padding: 20px 50px;
+    position: relative;
+}
