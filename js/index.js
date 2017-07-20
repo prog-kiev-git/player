@@ -63,6 +63,8 @@ function onPlayTrack(element){
     let URI = `http://freemusicarchive.org/services/track/single/${id}.json?api_key=${API_KEY}`;
     $.get(URI, (response)=>{
        let track = JSON.parse(response);
+       console.log('in player ->', track);
+       $('#album_img').attr('src', track.track_image_file);
        player.attr('src', track.track_listen_url);
        player.attr('autoplay', true);
     })
