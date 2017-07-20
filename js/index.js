@@ -11,11 +11,12 @@ const searchForm = $('#search'),
           next: $('#next')
       };
 
-let changeTrack = direction => () => {
-    let current = tracksList.find('.in-player');
-
-    let nextItem = current[direction]();
-    onPlayTrack(nextItem.attr('data-id'), nextItem.index(), nextItem);
+let changeTrack = function(direction) {
+    return function(){
+        let current = tracksList.find('.in-player');
+        let nextItem = current[direction]();
+        onPlayTrack(nextItem);
+    }
 }
 
 let nextTrack = changeTrack('next'),
@@ -39,24 +40,26 @@ control.btn.on('click', function(e){
     }
 });
 tracksList.on('click', 'li', function(){
-    let element = $(this), index = element.index();
-    playerTemplate.removeClass('hidden')
-                  .find('.play')
-                  .addClass('hidden')
-                  .next()
-                  .removeClass('hidden');       
-
-    let id = element.data('id');
-
-    onPlayTrack(id, index, element);
+    let element = $(this);
+    onPlayTrack(element);
 })
 
-function onPlayTrack(id, indexInList, element){
+function onPlayTrack(element){
+    let id = element.attr('data-id'),
+        indexInList = element.index();
+
     if (indexInList < 0 || indexInList > 19) return;
+    
     element.addClass('in-player')
            .siblings()
            .removeClass('in-player');
 
+    playerTemplate.removeClass('hidden')
+                .find('.play')
+                .addClass('hidden')
+                .next()
+                .removeClass('hidden');  
+           
     let URI = `http://freemusicarchive.org/services/track/single/${id}.json?api_key=${API_KEY}`;
     $.get(URI, (response)=>{
        let track = JSON.parse(response);
